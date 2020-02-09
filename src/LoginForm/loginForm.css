@@ -1,0 +1,84 @@
+.form-container{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(19, 19, 54);
+}
+
+.form{
+  width: 500px;
+  margin-top: -100px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.form input[type='text'], input[type='password'] {
+  padding: 15px 8px;
+  font-size: 20px;
+  width: 100%;
+  border: 1px #333 solid;
+  border-radius: 5px;
+}
+
+.subBtn {
+  background-color: #ddd;
+  color: black;
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.subBtn:active{
+  transform: scale(.95);
+}
+
+.input-group{
+  margin-bottom: 1em;
+}
+
+p.error-msg{
+  padding: 0;
+  margin: 0;
+  margin-top: .25em;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.red{
+  color: rgb(255, 0, 0);
+}
+
+.green{
+  color: green;
+}
+
+.error-holder{
+  padding: 0px 5px;
+}
+
+.shake{
+  animation-name: shakeMsg;
+  animation-duration: .3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes shakeMsg{
+  0%, 100% { transform: translate(0px, 0px)}
+  33% {transform: translate(2px, 2px)}
+  67% {transform: translate(-2px, -2px)}
+}
+
+.good{
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+
+.not-good{
+  background-color: #ddd;
+  color: #555;
+}

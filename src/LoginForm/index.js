@@ -13,6 +13,8 @@ const LoginForm = props => {
   const [passwordNumbers, setPasswordNumbers] = useState(true);
   const [passwordCapitals, setPasswordCapitals] = useState(true);
 
+  const [allowSubmit, setAllowSubmit] = useState(false);
+
   const validateForm = e => {
     e.preventDefault();
     console.log('form submitted');
@@ -26,8 +28,44 @@ const LoginForm = props => {
       console.log('would send baby');
     } else {
       console.log('no no no');
+      shakeErrors();
     }
   };
+
+  const shakeErrors = () => {
+    const errorMsgs = [].slice.call(
+      document.querySelectorAll('.error-msg.red')
+    );
+    console.log(errorMsgs);
+    errorMsgs.forEach(errorMsg => {
+      errorMsg.classList.add('shake');
+      setTimeout(() => {
+        errorMsg.classList.remove('shake');
+      }, 350);
+    });
+  };
+
+  useEffect(() => {
+    console.log('running')
+    if (
+      !showEmail &&
+      !showUsername &&
+      !passwordNumbers &&
+      !passwordLength &&
+      !passwordCapitals
+    ) {
+      console.log('would set to true')
+      setAllowSubmit(true);
+    } else {
+      setAllowSubmit(false);
+    }
+  }, [
+    showEmail,
+    showUsername,
+    passwordCapitals,
+    passwordLength,
+    passwordNumbers
+  ]);
 
   // Username Validation Effect
   useEffect(() => {
@@ -75,14 +113,14 @@ const LoginForm = props => {
   }, [password]);
 
   return (
-    <div className='container'>
+    <div className='form-container'>
       <form
         className='form'
         autoComplete='off'
         onSubmit={e => {
           validateForm(e);
         }}>
-        <h3>Join the Party!</h3>
+        <h2 className='text-center'>Join the Party!</h2>
         <div className='input-group'>
           <input
             type='text'
@@ -134,7 +172,11 @@ const LoginForm = props => {
           </div>
         </div>
         <div className='input-group'>
-          <input type='submit' value='Submit' />
+          <input
+            className={allowSubmit ? "subBtn good": "subBtn not-good"}
+            type='submit'
+            value='Submit'
+          />
         </div>
       </form>
     </div>
