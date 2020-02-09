@@ -25,9 +25,9 @@ const LoginForm = props => {
       !passwordNumbers &&
       !passwordCapitals
     ) {
-      console.log('would send baby');
+      console.log('would send');
     } else {
-      console.log('no no no');
+      console.log('not sending');
       shakeErrors();
     }
   };
@@ -36,7 +36,6 @@ const LoginForm = props => {
     const errorMsgs = [].slice.call(
       document.querySelectorAll('.error-msg.red')
     );
-    console.log(errorMsgs);
     errorMsgs.forEach(errorMsg => {
       errorMsg.classList.add('shake');
       setTimeout(() => {
@@ -46,7 +45,6 @@ const LoginForm = props => {
   };
 
   useEffect(() => {
-    console.log('running')
     if (
       !showEmail &&
       !showUsername &&
@@ -54,7 +52,6 @@ const LoginForm = props => {
       !passwordLength &&
       !passwordCapitals
     ) {
-      console.log('would set to true')
       setAllowSubmit(true);
     } else {
       setAllowSubmit(false);
