@@ -1,0 +1,25 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(233, 238, 252);
+}
+
+header .brand{
+  font-size: 40px;
+  font-weight: bolder;
+  padding: 0px 20px;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  padding: 0px 20px;
+}
+
+header ul li{
+  margin: 0 5px;
+  text-decoration: underline;
+  color: rgb(0, 140, 255);
+  cursor: pointer;
+}

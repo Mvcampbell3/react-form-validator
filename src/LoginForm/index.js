@@ -110,73 +110,67 @@ const LoginForm = props => {
   }, [password]);
 
   return (
-    <div className='form-container'>
-      <form
-        className='form'
-        autoComplete='off'
-        onSubmit={e => {
-          validateForm(e);
-        }}>
-        <h2 className='text-center'>Join the Party!</h2>
-        <div className='input-group'>
-          <input
-            type='text'
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            placeholder='Enter Username...'
-          />
-          <div className='error-holder'>
-            <p className={showUsername ? 'error-msg red' : 'error-msg green'}>
-              Username must be at least 6 characters long
-            </p>
-          </div>
+    <form
+      className='form'
+      autoComplete='off'
+      onSubmit={e => {
+        validateForm(e);
+      }}>
+      <h2 className='text-center'>Join the Party!</h2>
+      <div className='input-group'>
+        <input
+          type='text'
+          value={username}
+          onChange={e => setUsername(e.target.value)}
+          placeholder='Enter Username...'
+        />
+        <div className='error-holder'>
+          <p className={showUsername ? 'error-msg red' : 'error-msg green'}>
+            Username must be at least 6 characters long
+          </p>
         </div>
-        <div className='input-group'>
-          <input
-            autoComplete='new-password'
-            type='text'
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder='Enter Email...'
-          />
-          <div className='error-holder'>
-            <p className={showEmail ? 'error-msg red' : 'error-msg green'}>
-              Please Enter Valid Email
-            </p>
-          </div>
+      </div>
+      <div className='input-group'>
+        <input
+          autoComplete='new-password'
+          type='text'
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          placeholder='Enter Email...'
+        />
+        <div className='error-holder'>
+          <p className={showEmail ? 'error-msg red' : 'error-msg green'}>
+            Please Enter Valid Email
+          </p>
         </div>
-        <div className='input-group'>
-          <input
-            type='password'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            placeholder='Enter Password...'
-          />
-          <div className='error-holder'>
-            <p className={passwordLength ? 'error-msg red' : 'error-msg green'}>
-              Password must be at least 6 characters long
-            </p>
-            <p
-              className={passwordNumbers ? 'error-msg red' : 'error-msg green'}>
-              Password must contain at least one number
-            </p>
-            <p
-              className={
-                passwordCapitals ? 'error-msg red' : 'error-msg green'
-              }>
-              Password must contain at least one capital letter
-            </p>
-          </div>
+      </div>
+      <div className='input-group'>
+        <input
+          type='password'
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+          placeholder='Enter Password...'
+        />
+        <div className='error-holder'>
+          <p className={passwordLength ? 'error-msg red' : 'error-msg green'}>
+            Password must be at least 6 characters long
+          </p>
+          <p className={passwordNumbers ? 'error-msg red' : 'error-msg green'}>
+            Password must contain at least one number
+          </p>
+          <p className={passwordCapitals ? 'error-msg red' : 'error-msg green'}>
+            Password must contain at least one capital letter
+          </p>
         </div>
-        <div className='input-group'>
-          <input
-            className={allowSubmit ? "subBtn good": "subBtn not-good"}
-            type='submit'
-            value='Submit'
-          />
-        </div>
-      </form>
-    </div>
+      </div>
+      <div className='input-group'>
+        <input
+          className={allowSubmit ? 'subBtn good' : 'subBtn not-good'}
+          type='submit'
+          value='Submit'
+        />
+      </div>
+    </form>
   );
 };
 
