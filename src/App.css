@@ -12,3 +12,21 @@ body{
 .text-center{
   text-align: center;
 }
+
+.container{
+  display: grid;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 55px auto 55px;
+  grid-template-areas: "header header header"
+                       "left-ad-area splash right-ad-area"
+                       "footer footer footer";
+  min-height: 100vh;
+}
+
+header{
+  grid-area: header;
+}
+
+footer{
+  grid-area: footer;
+}

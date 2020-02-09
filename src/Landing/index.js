@@ -2,7 +2,7 @@ import React from 'react';
 
 const Landing = props => {
   return (
-    <div className='landing'>
+    <div className='landing splash'>
       <h1 className='text-center'>Why</h1>
 
       <hr />

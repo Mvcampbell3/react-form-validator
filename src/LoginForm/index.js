@@ -111,7 +111,7 @@ const LoginForm = props => {
 
   return (
     <form
-      className='form'
+      className='form splash'
       autoComplete='off'
       onSubmit={e => {
         validateForm(e);

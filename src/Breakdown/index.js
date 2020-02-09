@@ -3,7 +3,7 @@ import './breakdown.css';
 
 const Breakdown = (props) => {
   return ( 
-    <div className="breakdown">
+    <div className="breakdown splash">
       This is the Breakdown
     </div>
    );

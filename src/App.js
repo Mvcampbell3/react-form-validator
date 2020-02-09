@@ -5,6 +5,7 @@ import LoginForm from './LoginForm';
 import Header from './Header';
 import Landing from './Landing';
 import Breakdown from './Breakdown';
+import Footer from './Footer';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -39,9 +40,12 @@ function App() {
         displayLanding={displayLanding}
         displayBreakdown={displayBreakdown}
       />
+      <div className="left-ad"></div>
       {viewLogin ? <LoginForm /> : null}
       {viewLanding ? <Landing /> : null}
       {viewBreakdown ? <Breakdown /> : null}
+      <div className="right-ad"></div>
+      <Footer />
     </div>
   );
 }
