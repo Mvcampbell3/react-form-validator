@@ -7,12 +7,10 @@ const Header = props => {
       <div className='brand'>Validator 3000!</div>
       <nav>
         <ul>
-          <li>Why</li>
+          <li onClick={props.displayLanding}>Why</li>
           <li>How</li>
           <li
-            onClick={() => {
-              props.setViewLogin(true);
-            }}>
+            onClick={props.displayLogin}>
             {props.loggedIn ? 'Welcome Back' : 'Login'}
           </li>
         </ul>
