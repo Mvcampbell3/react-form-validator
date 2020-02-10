@@ -38,3 +38,7 @@ footer{
   align-items: center;
   flex-direction: column;
 }
+
+.inner-splash{
+  max-width: 800px;
+}
