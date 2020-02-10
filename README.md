@@ -1,68 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Form Validator
 
-## Available Scripts
+The purpose of this project is to create a solid client-side form validation process using React Hooks.
 
-In the project directory, you can run:
+### Process
 
-### `npm start`
+By using useState and useEffect hooks within the LoginForm component, the state is binded with input elements. When those inputs trigger onChange events, they update the state. When state gets updated, the dependant useEffect hook runs, which checks to see if the current state meets the correct criteria for the input.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For example, let's take a look at the password input. The input directly sets the password state using setPassword that was created in the useState hook. The useEffect hook the runs when ever the password state is changed checks the password string to make sure it meets the following: 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+ - Contains a uppercase letter
+ - Contains a number
+ - Has at least 6 characters
 
-### `npm test`
+Each of those criteria match up with a state boolean variable. Using those variables, and the ones from username, email, and the second password, we have another useEffect hook which gates the submit button's appearance and onClick functionality. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Conclusion
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+While this process is not overly complex, it is the cornerstone of ensuring that the server recieves only good data. We can then process that data into our database, confident that the validation criteria we have set up to gate our database and server is met. The benefit to this process is there should be no server interaction with our form unless the user has met every criteria. The feedback is instant. The server and database do not have to waste resources processing and evaluating bad data. This, in turn, improves performance across an entire appliation.
