@@ -74,5 +74,9 @@ body{
                          "foot" 
       ;
   }
+
+  .splash{
+    padding: 0px 10px;
+  }
   
 }
