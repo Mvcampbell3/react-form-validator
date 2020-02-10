@@ -4,11 +4,10 @@ header{
   align-items: center;
   background-color: rgb(247, 247, 247);
   grid-area: head;
-
 }
 
 header .brand{
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bolder;
   padding: 0px 20px;
 }
@@ -24,4 +23,18 @@ header ul li{
   text-decoration: underline;
   color: rgb(0, 140, 255);
   cursor: pointer;
+}
+
+@media(max-width: 700px) {
+  header .brand{
+    font-size: 16px;
+  }
+
+  header ul{
+    padding-left: 0;
+  }
+
+  header ul li{
+    font-size: 12px;
+  }
 }

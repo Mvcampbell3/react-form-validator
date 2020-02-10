@@ -74,3 +74,10 @@ p.error-msg{
   background-color: #ddd;
   color: #555;
 }
+
+@media (max-width: 800px) {
+  .form{
+    width: 320px;
+    padding: 5px;
+  }
+}
