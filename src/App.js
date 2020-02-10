@@ -50,6 +50,7 @@ function App() {
       <div className='right-ad'>
         <Panel />
       </div>
+
       <Footer />
     </div>
   );

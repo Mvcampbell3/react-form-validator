@@ -7,6 +7,7 @@
 
 body{
   margin: 0;
+  min-height: 100vh;
 }
 
 .text-center{
@@ -15,24 +16,16 @@ body{
 
 .container{
   display: grid;
-  grid-template-columns: 300px auto 300px;
-  grid-template-rows: 55px auto 55px;
-  grid-template-areas: "header header header"
-                       "left-ad-area splash right-ad-area"
-                       "footer footer footer";
+  grid-template-columns: 40px 300px 1fr 300px 40px;
+  grid-template-rows: 55px 1fr 55px;
+  grid-template-areas: "head head head head head"
+                       ". left-ad-area main right-ad-area ."
+                       "foot foot foot foot foot";
   min-height: 100vh;
 }
 
-header{
-  grid-area: header;
-}
-
-footer{
-  grid-area: footer;
-}
-
 .splash{
-  grid-area: splash;
+  grid-area: main;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +33,7 @@ footer{
 }
 
 .inner-splash{
-  max-width: 800px;
+  max-width: 700px;
 }
 
 .left-ad{
@@ -53,7 +46,7 @@ footer{
   width: 100%;
 }
 
-@media (max-width: 1200px) {
+/* @media (max-width: 1200px) {
   .container{
     grid-template-columns: 200px auto 200px;
   }
@@ -84,4 +77,4 @@ footer{
   .splash{
     justify-content: flex-start;
   }
-}
+} */

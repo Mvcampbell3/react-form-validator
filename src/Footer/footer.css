@@ -3,5 +3,6 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightblue;
+  background-color: rgb(247, 247, 247);
+  grid-area: foot;
 }
