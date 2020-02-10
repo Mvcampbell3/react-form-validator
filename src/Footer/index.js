@@ -1,10 +1,16 @@
 import React from 'react';
 import './footer.css';
 
-const Footer = (props) => {
-  return ( 
-    <footer>This is the footer</footer>
-   );
-}
- 
+const Footer = props => {
+  return (
+    <footer>
+      <p>Michael Campbell</p>
+      <a target='_blank' href='https://mvcampbell3.com'>
+        Portfolio
+      </a>
+      <a href='mailto:mvcampbell3@gmail.com'>Email</a>
+    </footer>
+  );
+};
+
 export default Footer;
