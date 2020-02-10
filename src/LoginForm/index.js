@@ -4,6 +4,7 @@ import './loginForm.css';
 const LoginForm = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [password2, setPassword2] = useState('');
   const [username, setUsername] = useState('');
 
   const [showUsername, setShowUsername] = useState(true);
@@ -12,6 +13,8 @@ const LoginForm = props => {
   const [passwordLength, setPasswordLength] = useState(true);
   const [passwordNumbers, setPasswordNumbers] = useState(true);
   const [passwordCapitals, setPasswordCapitals] = useState(true);
+
+  const [notMatchingPasswords, setNotMatchingPasswords] = useState(true);
 
   const [allowSubmit, setAllowSubmit] = useState(false);
 
@@ -23,7 +26,8 @@ const LoginForm = props => {
       !showEmail &&
       !passwordLength &&
       !passwordNumbers &&
-      !passwordCapitals
+      !passwordCapitals &&
+      !notMatchingPasswords
     ) {
       console.log('would send');
     } else {
@@ -50,7 +54,8 @@ const LoginForm = props => {
       !showUsername &&
       !passwordNumbers &&
       !passwordLength &&
-      !passwordCapitals
+      !passwordCapitals &&
+      !notMatchingPasswords
     ) {
       setAllowSubmit(true);
     } else {
@@ -61,7 +66,8 @@ const LoginForm = props => {
     showUsername,
     passwordCapitals,
     passwordLength,
-    passwordNumbers
+    passwordNumbers,
+    notMatchingPasswords
   ]);
 
   // Username Validation Effect
@@ -108,6 +114,14 @@ const LoginForm = props => {
       setPasswordCapitals(false);
     }
   }, [password]);
+
+  useEffect(() => {
+    if (password !== password2 || password === '') {
+      setNotMatchingPasswords(true);
+    } else {
+      setNotMatchingPasswords(false);
+    }
+  }, [password, password2]);
 
   return (
     <div className='splash'>
@@ -165,6 +179,22 @@ const LoginForm = props => {
                 passwordCapitals ? 'error-msg red' : 'error-msg green'
               }>
               Password must contain at least one capital letter
+            </p>
+          </div>
+        </div>
+        <div className='input-group'>
+          <input
+            type='password'
+            placeholder='Confirm password...'
+            value={password2}
+            onChange={e => setPassword2(e.target.value)}
+          />
+          <div className='error-holder'>
+            <p
+              className={
+                notMatchingPasswords ? 'error-msg red' : 'error-msg green'
+              }>
+              Passwords must match
             </p>
           </div>
         </div>

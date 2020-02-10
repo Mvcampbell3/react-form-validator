@@ -11,7 +11,7 @@ const Header = props => {
           <li onClick={props.displayBreakdown}>How</li>
           <li
             onClick={props.displayLogin}>
-            {props.loggedIn ? 'Welcome Back' : 'Login'}
+            {props.loggedIn ? 'Welcome Back' : 'Sign Up'}
           </li>
         </ul>
       </nav>
