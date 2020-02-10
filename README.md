@@ -2,6 +2,8 @@
 
 The purpose of this project is to create a solid client-side form validation process using React Hooks.
 
+[Deployed Project](https://react-form-validator.netlify.com/)
+
 ### Process
 
 By using useState and useEffect hooks within the LoginForm component, the state is binded with input elements. When those inputs trigger onChange events, they update the state. When state gets updated, the dependant useEffect hook runs, which checks to see if the current state meets the correct criteria for the input.
