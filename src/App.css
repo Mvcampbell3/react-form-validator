@@ -47,3 +47,41 @@ footer{
   grid-area: left-ad-area;
   width: 100%;
 }
+
+.right-ad{
+  grid-area: right-ad-area;
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .container{
+    grid-template-columns: 200px auto 200px;
+  }
+}
+
+@media (max-width: 800px) {
+  .right-ad{
+    display: none;
+  }
+
+  .container{
+    grid-template-areas: "header header header"
+                         "left-ad-area splash splash"
+                         "footer footer footer";
+  }
+}
+
+@media (max-width: 600px) {
+  .container{
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 55px 150px auto 55px;
+    grid-template-areas: "header header"
+    "left-ad-area left-ad-area"
+    "splash splash"
+    "footer footer"
+  }
+
+  .splash{
+    justify-content: flex-start;
+  }
+}

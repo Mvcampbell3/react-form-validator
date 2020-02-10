@@ -13,3 +13,17 @@
   height: auto;
 }
 
+@media (max-width: 600px) {
+  .panel{
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .panel img{
+    height: 150px;
+    width: auto;
+    max-width: 150px;
+  }
+}
+
