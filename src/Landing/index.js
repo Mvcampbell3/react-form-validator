@@ -6,16 +6,16 @@ const Landing = props => {
       <div className='landing inner-splash'>
         <h1>Why</h1>
         <p className='content'>
-          Like many things that have to do with coding, making some
-          form-validation process is exactly as difficult as you want to make
-          it. You can plug some HTML5 required tags on your inputs and call it a
-          day. You can just let the back-end guys and gals take care of the
-          heavy lifting and not do any client-side validation. You can also make
-          a validation system which makes it clear to the user what type of
-          values are accepted, feedback for where the user needs to make some
-          adjustments, and finally let the user know when they do a good job.
-          Obviously, the last option is the best option.
+          Like many things that have to do with coding, the form-validation
+          process is exactly as intricate as you want to make it. You can have
+          the inputs pass directly to your server without any client side
+          validation, which is not a great idea. You could just slap some HTML5
+          requried tags on to your form inputs, but that just seems kind of lazy.
+          The sign in form here lets the user know if they have met the criteria
+          for each input. The submit button will only send information to the
+          server is all of the criteria of the form is met. This is the way.
         </p>
+        <p>There is not reason for the gifs that are on this page.</p>
       </div>
     </div>
   );
