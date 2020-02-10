@@ -40,11 +40,11 @@ function App() {
         displayLanding={displayLanding}
         displayBreakdown={displayBreakdown}
       />
-      <div className="left-ad"></div>
+      <div className='left-ad'></div>
       {viewLogin ? <LoginForm /> : null}
       {viewLanding ? <Landing /> : null}
       {viewBreakdown ? <Breakdown /> : null}
-      <div className="right-ad"></div>
+      <div className='right-ad'></div>
       <Footer />
     </div>
   );
