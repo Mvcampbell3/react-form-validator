@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './loginForm.css';
 
+import Congrats from '../Congrats';
+
 const LoginForm = props => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +20,8 @@ const LoginForm = props => {
 
   const [allowSubmit, setAllowSubmit] = useState(false);
 
+  const [displayForm, setDisplayForm] = useState(true);
+
   const validateForm = e => {
     e.preventDefault();
     console.log('form submitted');
@@ -30,6 +34,7 @@ const LoginForm = props => {
       !notMatchingPasswords
     ) {
       console.log('would send');
+      setDisplayForm(false);
     } else {
       console.log('not sending');
       shakeErrors();
@@ -125,6 +130,7 @@ const LoginForm = props => {
 
   return (
     <div className='splash'>
+      {displayForm ? 
       <form
         className='form splash'
         autoComplete='off'
@@ -206,6 +212,7 @@ const LoginForm = props => {
           />
         </div>
       </form>
+      : <Congrats /> }
     </div>
   );
 };

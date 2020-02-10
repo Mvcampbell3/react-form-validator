@@ -1,0 +1,15 @@
+.congrats-img{
+  display: block;
+  width: 400px;
+  height: auto;
+  animation-name: showUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  transform: scale(.5) rotateZ(315deg)
+}
+
+@keyframes showUp{
+  0% {transfrom: scale(.5) rotateZ(315deg)}
+  100% {transform: scale(1) rotateZ(0deg)}
+}
