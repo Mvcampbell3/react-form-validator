@@ -1,15 +1,17 @@
 import React from 'react';
 import './breakdown.css';
 
-const Breakdown = (props) => {
-  return ( 
-    <div className="splash">
-      <div className="inner-splash">
-        <h1>This is the Breakdown</h1>
-        <p className="content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique facilis ex placeat ipsum libero dolores doloremque consequatur quod dolor velit, laboriosam vitae amet illo eum neque at id distinctio non et? Reiciendis neque cumque quos voluptatibus, excepturi perspiciatis earum ducimus? Voluptas cum velit nihil totam quae officiis dolor magnam recusandae reiciendis soluta quasi minus adipisci voluptatum, quas minima, dolorem repudiandae quam facere iste! Ab nobis eos hic harum? Blanditiis repellat odio expedita tempore aliquam asperiores et! Sequi dolor porro deleniti perferendis nihil voluptas neque quisquam fugiat. Distinctio minima accusantium tempora ipsam mollitia repellat corporis velit consequatur voluptate. Temporibus magni fuga hic cumque quia atque quas, ad iste sequi. Eum earum excepturi accusantium omnis voluptatum aperiam, aut iure optio in totam perferendis eius quibusdam explicabo id accusamus.</p>
+const Breakdown = props => {
+  return (
+    <div className='splash'>
+      <div className='inner-splash'>
+        <h1>Breakdown</h1>
+        <p className='content'>
+          The form on the sign up page uses React onChange events to set the values for our state inside of the form component. I used useState and useEffect hooks to manage state and run the validation checks. For username and password, the useEffect hooks would check to see if the state met certain criteria (ie. number of characters or if the state includes a number) and then set a boolean state based on if it passed validation. The email useEffect hook runs a RegEx test on the email state to see if it meets the valid email criteria. All that was left to do was give the error messages and submit button conditional class names which changed their appearance. 
+        </p>
       </div>
     </div>
-   );
-}
- 
+  );
+};
+
 export default Breakdown;

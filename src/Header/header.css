@@ -2,7 +2,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(0, 0, 0);
+  background-color: #222;
   grid-area: head;
 }
 
