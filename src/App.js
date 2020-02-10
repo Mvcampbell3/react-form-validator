@@ -6,6 +6,7 @@ import Header from './Header';
 import Landing from './Landing';
 import Breakdown from './Breakdown';
 import Footer from './Footer';
+import Panel from './Panel';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -40,11 +41,15 @@ function App() {
         displayLanding={displayLanding}
         displayBreakdown={displayBreakdown}
       />
-      <div className='left-ad'></div>
+      <div className='left-ad'>
+        <Panel />
+      </div>
       {viewLogin ? <LoginForm /> : null}
       {viewLanding ? <Landing /> : null}
       {viewBreakdown ? <Breakdown /> : null}
-      <div className='right-ad'></div>
+      <div className='right-ad'>
+        <Panel />
+      </div>
       <Footer />
     </div>
   );
