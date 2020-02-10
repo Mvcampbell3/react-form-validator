@@ -30,3 +30,11 @@ header{
 footer{
   grid-area: footer;
 }
+
+.splash{
+  grid-area: splash;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
