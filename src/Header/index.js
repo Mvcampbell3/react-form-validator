@@ -7,12 +7,9 @@ const Header = props => {
       <div className='brand'>Validator 3000!</div>
       <nav>
         <ul>
-          <li onClick={props.displayLanding}>Why</li>
-          <li onClick={props.displayBreakdown}>How</li>
-          <li
-            onClick={props.displayLogin}>
-            {props.loggedIn ? 'Welcome Back' : 'Sign Up'}
-          </li>
+          <li className={props.viewLogin ? 'active': null} onClick={props.displayLogin}>Sign Up</li>
+          <li className={props.viewLanding ? 'active': null} onClick={props.displayLanding}>Why</li>
+          <li className={props.viewBreakdown ? 'active': null} onClick={props.displayBreakdown}>How</li>
         </ul>
       </nav>
     </header>

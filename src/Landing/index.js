@@ -15,7 +15,6 @@ const Landing = props => {
           for each input. The submit button will only send information to the
           server is all of the criteria of the form is met. This is the way.
         </p>
-        <p>There is not reason for the gifs that are on this page.</p>
       </div>
     </div>
   );

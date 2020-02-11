@@ -18,9 +18,10 @@ body{
   display: grid;
   grid-template-columns: 5% 20% 50% 20% 5%;
   grid-template-rows: 55px 1fr 55px;
-  grid-template-areas: "head head head head head"
-                       ". left-ad-area main right-ad-area ."
-                       "foot foot foot foot foot";
+  grid-template-areas: 
+  "head head head head head"
+  ". left-ad-area main right-ad-area ."
+  "foot foot foot foot foot";
   min-height: 100vh;
 }
 
@@ -32,12 +33,11 @@ body{
   flex-direction: column;
   line-height: 1.6;
   padding: 10px;
-  background-color: rgb(100, 100, 100)
 }
 
 .inner-splash{
   max-width: 700px;
-  background-color: white;
+  background: white;
   padding: 0 10px;
   border-radius: 10px;
 }
@@ -56,10 +56,10 @@ body{
   .container{
     column-gap: 10px;
     grid-template-columns: 5% 200px auto 5%;
-    grid-template-areas: "head head head head"
-                         ". left-ad-area main ."
-                         "foot foot foot foot" 
-      ;
+    grid-template-areas: 
+    "head head head head"
+    ". left-ad-area main ."
+    "foot foot foot foot";
   }
 
   .right-ad{
@@ -73,14 +73,14 @@ body{
     width: 100%;
     grid-template-columns: 1fr;
     grid-template-rows: 55px auto 150px 55px;
-    grid-template-areas: "head"
-                         "main"
-                         "left-ad-area" 
-                         "foot";
+    grid-template-areas: 
+    "head"
+    "main"
+    "left-ad-area" 
+    "foot";
   }
 
   .splash{
     padding: 10px;
   }
-  
 }

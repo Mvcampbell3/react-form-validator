@@ -9,13 +9,11 @@ import Footer from './Footer';
 import Panel from './Panel';
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [viewLogin, setViewLogin] = useState(false);
-  const [viewLanding, setViewLanding] = useState(true);
+  const [viewLogin, setViewLogin] = useState(true);
+  const [viewLanding, setViewLanding] = useState(false);
   const [viewBreakdown, setViewBreakdown] = useState(false);
 
   const [displayForm, setDisplayForm] = useState(true);
-
 
   const displayLogin = () => {
     setViewLanding(false);
@@ -39,16 +37,19 @@ function App() {
   return (
     <div className='container'>
       <Header
-        loggedIn={loggedIn}
-        setLoggedIn={setLoggedIn}
         displayLogin={displayLogin}
         displayLanding={displayLanding}
         displayBreakdown={displayBreakdown}
+        viewLanding={viewLanding}
+        viewBreakdown={viewBreakdown}
+        viewLogin={viewLogin}
       />
       <div className='left-ad'>
         <Panel displayForm={displayForm} />
       </div>
-      {viewLogin ? <LoginForm displayForm={displayForm} setDisplayForm={setDisplayForm} /> : null}
+      {viewLogin ? (
+        <LoginForm displayForm={displayForm} setDisplayForm={setDisplayForm} />
+      ) : null}
       {viewLanding ? <Landing /> : null}
       {viewBreakdown ? <Breakdown /> : null}
       <div className='right-ad'>
