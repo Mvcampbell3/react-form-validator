@@ -13,3 +13,9 @@
   0% {transfrom: scale(.5) rotateZ(315deg)}
   100% {transform: scale(1) rotateZ(0deg)}
 }
+
+@media (max-width: 500px) {
+  .congrats-img{
+    width: 320px;
+  }
+}

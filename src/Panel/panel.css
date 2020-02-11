@@ -13,7 +13,7 @@
   height: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   .panel{
     flex-direction: row;
     align-items: center;

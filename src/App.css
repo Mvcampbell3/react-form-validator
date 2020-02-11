@@ -31,10 +31,15 @@ body{
   align-items: center;
   flex-direction: column;
   line-height: 1.6;
+  padding: 10px;
+  background-color: rgb(100, 100, 100)
 }
 
 .inner-splash{
   max-width: 700px;
+  background-color: white;
+  padding: 0 10px;
+  border-radius: 10px;
 }
 
 .left-ad{
@@ -62,21 +67,20 @@ body{
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 620px) {
   .container{
     row-gap: 10px;
     width: 100%;
     grid-template-columns: 1fr;
-    grid-template-rows: 55px 150px auto 55px;
+    grid-template-rows: 55px auto 150px 55px;
     grid-template-areas: "head"
-                         "left-ad-area" 
                          "main"
-                         "foot" 
-      ;
+                         "left-ad-area" 
+                         "foot";
   }
 
   .splash{
-    padding: 0px 10px;
+    padding: 10px;
   }
   
 }

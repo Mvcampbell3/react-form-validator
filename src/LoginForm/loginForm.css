@@ -75,7 +75,7 @@ p.error-msg{
   color: #555;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 820px) {
   .form{
     width: 320px;
     padding: 5px;

@@ -14,10 +14,14 @@ function App() {
   const [viewLanding, setViewLanding] = useState(true);
   const [viewBreakdown, setViewBreakdown] = useState(false);
 
+  const [displayForm, setDisplayForm] = useState(true);
+
+
   const displayLogin = () => {
     setViewLanding(false);
     setViewBreakdown(false);
     setViewLogin(true);
+    setDisplayForm(true);
   };
 
   const displayLanding = () => {
@@ -42,13 +46,13 @@ function App() {
         displayBreakdown={displayBreakdown}
       />
       <div className='left-ad'>
-        <Panel />
+        <Panel displayForm={displayForm} />
       </div>
-      {viewLogin ? <LoginForm /> : null}
+      {viewLogin ? <LoginForm displayForm={displayForm} setDisplayForm={setDisplayForm} /> : null}
       {viewLanding ? <Landing /> : null}
       {viewBreakdown ? <Breakdown /> : null}
       <div className='right-ad'>
-        <Panel />
+        <Panel displayForm={displayForm} />
       </div>
 
       <Footer />

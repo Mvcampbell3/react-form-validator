@@ -21,8 +21,9 @@ const Panel = props => {
 
   return (
   <div className='panel'>
-    <img src={gifArr[randNum1]} alt='victory gif' />
-    <img src={gifArr[randNum2]} alt='victory gif' />
+    {props.displayForm ? null : <img src={gifArr[randNum1]} alt='victory gif' /> }
+    {props.displayForm ? null : <img src={gifArr[randNum2]} alt='victory gif' /> }
+    
   </div>
   )
 };

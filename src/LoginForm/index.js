@@ -20,7 +20,6 @@ const LoginForm = props => {
 
   const [allowSubmit, setAllowSubmit] = useState(false);
 
-  const [displayForm, setDisplayForm] = useState(true);
 
   const validateForm = e => {
     e.preventDefault();
@@ -34,7 +33,7 @@ const LoginForm = props => {
       !notMatchingPasswords
     ) {
       console.log('would send');
-      setDisplayForm(false);
+      props.setDisplayForm(false);
     } else {
       console.log('not sending');
       shakeErrors();
@@ -130,7 +129,7 @@ const LoginForm = props => {
 
   return (
     <div className='splash'>
-      {displayForm ? 
+      {props.displayForm ? 
       <form
         className='form splash'
         autoComplete='off'
