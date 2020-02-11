@@ -1,5 +1,5 @@
 import React from 'react';
-import './panel.css'
+import './panel.css';
 
 const Panel = props => {
   const gifArr = [
@@ -13,19 +13,39 @@ const Panel = props => {
     'https://media1.giphy.com/media/VvXg0yjJQgfEQ/200.webp?cid=790b7611828c0dfb5be70f9369639134c76a0a053cb33302&rid=200.webp',
     'https://media1.giphy.com/media/PoZhaUYaPZR8Q/200w.webp?cid=790b76116dc648808c91f8f15353c0d2c7d1bc4f2b3e291d&rid=200w.webp',
     'https://media0.giphy.com/media/P1KUwCOzLbHUc/giphy.webp?cid=790b7611000f26a042eefc4d4b4458d49af27a1e1ffc4231&rid=giphy.webp',
-    'https://media2.giphy.com/media/vIgrQiEKBbK4o/giphy.gif?cid=790b761125cf5fe2158b8b541f9a8de05d1c593bd1fd0296&rid=giphy.gif'
+    'https://media2.giphy.com/media/vIgrQiEKBbK4o/giphy.gif?cid=790b761125cf5fe2158b8b541f9a8de05d1c593bd1fd0296&rid=giphy.gif',
+    'https://media1.giphy.com/media/msKNSs8rmJ5m/giphy.gif?cid=790b7611f50714bff2b7087ef05344bd3357f7f68a20444a&rid=giphy.gif',
+    'https://media.giphy.com/media/UoLq1EKQ8s2u55JA7R/giphy.gif',
+    'https://media.giphy.com/media/lExXm1vSE7zb2/giphy.gif',
+    'https://media.giphy.com/media/3o7TKBTLxmltGUyCD6/giphy.gif',
+    'https://media.giphy.com/media/f5XoT6Bf0Vj8RqEP5p/giphy.gif',
+    'https://media.giphy.com/media/f5XoT6Bf0Vj8RqEP5p/giphy.gif',
+    'https://media.giphy.com/media/4QFAH0qZ0LQnIwVYKT/giphy.gif',
+    'https://media.giphy.com/media/RMNo6tS31KRd6UjIgH/giphy.gif'
   ];
 
-  const randNum1 = Math.floor(Math.random() * gifArr.length);
-  const randNum2 = Math.floor(Math.random() * gifArr.length);
+  let rand1;
+  let rand2;
+  
+  const makeRands = () => {
+    rand1 = Math.floor(Math.random() * gifArr.length);
+    rand2 = Math.floor(Math.random() * gifArr.length);
+
+    if (rand1 === rand2) {
+      makeRands()
+    } else {
+      return
+    }
+  } 
+
+  makeRands();
 
   return (
-  <div className='panel'>
-    {props.displayForm ? null : <img src={gifArr[randNum1]} alt='victory gif' /> }
-    {props.displayForm ? null : <img src={gifArr[randNum2]} alt='victory gif' /> }
-    
-  </div>
-  )
+    <div className='panel'>
+      {props.displayForm ? null : <img src={gifArr[rand1]} alt='victory gif' />}
+      {props.displayForm ? null : <img src={gifArr[rand2]} alt='victory gif' />}
+    </div>
+  );
 };
 
 export default Panel;
